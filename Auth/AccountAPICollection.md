@@ -8,7 +8,7 @@ A set of endpoints for user account management including registration, login, em
 ## 📝 1. Register
 
 **Method:** `POST`  
-**URL:** `http://127.0.0.1:8000/api/accounts/v2/register/`
+**URL:** `{{api_base_url}}/api/accounts/v2/register/`
 
 ### Body
 ```json
@@ -27,7 +27,7 @@ A set of endpoints for user account management including registration, login, em
   "data": {
     "user": {
       "id": 1,
-      "email": "user@example.com",
+      "email": "user@proton.me",
       "verified": false,
       ...
     },
@@ -76,7 +76,7 @@ If the user is already registered **and verified**, trying to register again wit
 ## ✅ 2. Email Verification
 
 **Method:** `GET`  
-**URL:** `http://127.0.0.1:8000/api/accounts/v2/email-verify/?token=<jwt_token>`
+**URL:** `{{api_base_url}}/api/accounts/v2/email-verify/?token=<jwt_token>`
 
 ### 🔹 Description
 Verifies the email using the provided JWT token. If the token is valid and the user is not already verified, the account is marked as verified and a welcome email is sent. The user is then redirected to the login page.
@@ -107,7 +107,7 @@ Redirects to:
 ## 🔐 3. Login
 
 **Method:** `POST`  
-**URL:** `http://127.0.0.1:8000/api/accounts/v2/login/`
+**URL:** `{{api_base_url}}/api/accounts/v2/login/`
 
 ### Body
 ```json
@@ -125,7 +125,7 @@ Authenticates the user and returns an access token if credentials are valid.
 ## 🚪 4. Logout
 
 **Method:** `POST`  
-**URL:** `http://127.0.0.1:8000/api/accounts/v2/logout/`
+**URL:** `{{api_base_url}}/api/accounts/v2/logout/`
 
 ### Body
 ```json
